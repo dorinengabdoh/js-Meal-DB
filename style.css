@@ -47,7 +47,7 @@ main {
 /* section1 */
 
 .logo {
-  padding-left:40%;
+  padding-left: 40%;
   padding-top: 110px;
 }
 
@@ -373,9 +373,9 @@ h4 {
     margin: 0 auto;
     width: fit-content;
   }
+
   .favorite-and-date {
     display: flex;
-    flex-direction: column;
   }
 
   .contain2 {
@@ -385,9 +385,9 @@ h4 {
   .join {
     display: none;
   }
+
   .contain1 {
     font-size: 24px;
-    /* padding-bottom: 200px; */
   }
 
   .image-container {
@@ -429,14 +429,66 @@ h4 {
     flex-direction: column;
   }
 
-  .main3{
+  .main3 {
     display: flex;
     flex-direction: column;
   }
 
   .sect5 {
     display: flex;
+    margin: 0 auto;
   }
 
-  
+  .image-card {
+    width: 90%;
+  }
+
+  .sect4-up {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .sect3 {
+    margin-right: 20px;
+  }
+
+  .d1 {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .sect1 {
+    display: none;
+  }
+
+  .desc,
+  .comment,
+  .null,
+  span {
+    font-size: 44px;
+  }
+
+  .comment {
+    padding-right: 290px;
+  }
+
+  .null {
+    padding-left: 70px;
+  }
+
+  .pasta {
+    width: 25%;
+  }
+
+  #header {
+    display: none;
+  }header
+
+  .headerM {
+    display: flex;
+    justify-content: space-between;
+  }
+
 }

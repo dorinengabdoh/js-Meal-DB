@@ -19,7 +19,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #f9f9f9;
-  margin-top: 80px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -80,6 +79,14 @@ main {
 }
 
 /* section3 */
+
+  section {
+    padding-top: 100px;
+  }
+  .section3 {
+    padding-top: 200px;
+  }
+
 
 .sect3 {
   display: flex;
@@ -430,6 +437,8 @@ h4 {
 
   #sel {
     font-size: 54px;
+    border-bottom: solid 1px #000;
+    width: 90%;
   }
 
   .bold {
@@ -507,8 +516,13 @@ h4 {
 
   .headerM {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    font-size: 30px;
+  }
+  .logo {
+    width: 80%;
+    margin-top: -90px;
+    margin-right: 80px;
   }
 
   select{
@@ -525,5 +539,4 @@ h4 {
   .sect6 {
     width: 100%;
   }
-
 }

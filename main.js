@@ -3,7 +3,7 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
-const categoryUrl = "https://www.themealdb.com/api/json/v1/1/categories.php"
+const categoryUrl = "www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
 
@@ -15,8 +15,9 @@ fetch(categoryUrl)
   })
   .then(data => {
     console.log(data)
-    displayCategoriesMeals(data.categories);
+    // displayCategoriesMeals(data.meals);
   })
+
 
 function displayCategoriesMeals(meals) {
   const mealContainer = document.querySelector('.sect5');

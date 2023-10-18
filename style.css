@@ -89,7 +89,6 @@ section {
   padding-top: 200px;
 }
 
-
 .sect3 {
   display: flex;
   padding-top: 80px;
@@ -535,10 +534,6 @@ h4 {
     border-bottom: 1px #0d0c0c;
     background-color: #ffffff;
   }
-
-  .sect6 {
-    width: 100%;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -564,7 +559,6 @@ h4 {
   }
 }
 
-
 @media screen and (min-width: 1484px) {
   .sect5 {
     display: grid;
@@ -585,4 +579,5 @@ h4 {
     list-style: none;
     padding: 0;
   }
- }
+}
+

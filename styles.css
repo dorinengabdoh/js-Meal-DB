@@ -296,4 +296,13 @@ button {
     display: none;
   }
 
+  .left {
+    display: flex;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+
 }

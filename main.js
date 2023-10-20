@@ -1,6 +1,4 @@
 import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.js";
 
 const categoryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";

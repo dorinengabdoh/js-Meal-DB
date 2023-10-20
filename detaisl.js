@@ -1,31 +1,67 @@
-import "./style.css";
-import { setupCounter } from "./counter.js";
 
-const apiUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772";
+const apiUrl = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
+const apiIng = "https://www.themealdb.com/api/json/v1/1/search.php?s"
 
-
-fetch(categoryUrl)
+fetch(apiUrl)
 
   .then((response) => {
     return response.json();
   })
   .then((data) => {
     console.log(data);
-    displayCategoriesMeals(data.meals);
+    displayDetailsMeals(data.meals);
   });
 
-function displayCategoriesMeals(meals) {
-  const mealContainer = document.querySelector(".sect5");
+function displayDetailsMeals(meals) {
+  const mealContainer = document.querySelector(".recipe");
   meals.forEach((meal) => {
     const mealCard = document.createElement("div");
-    mealCard.classList.add("carte1");
+    mealCard.classList.add("reci");
     mealCard.innerHTML = `
-          <div class="image-container">
-            <div class="image-card">
-              <img id="small" src="${meal.strMealThumb}" alt="Image 1">
-              <div class="desc">${meal.strMeal}</div>
-            </div>
-          </div>
+    <img id="icon-img" src="${meal.strMealThumb}" alt="">
+    <div class="icon-text">
+      <div class="star-row">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <strong> <p>${meal.strMeal}</p></strong>
+    </div>
+    `;
+    mealContainer.appendChild(mealCard);
+  });
+}
+
+
+
+
+fetch(apiUrl)
+
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    displayDetailsMeals(data.meals);
+  });
+
+function displayDetailsMeals(meals) {
+  const mealContainer = document.querySelector(".recipe");
+  meals.forEach((meal) => {
+    const mealCard = document.createElement("div");
+    mealCard.classList.add("reci");
+    mealCard.innerHTML = `
+    <img id="icon-img" src="${meal.strMealThumb}" alt="">
+    <div class="icon-text">
+      <div class="star-row">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <strong> <p>${meal.strMeal}</p></strong>
+    </div>
     `;
     mealContainer.appendChild(mealCard);
   });

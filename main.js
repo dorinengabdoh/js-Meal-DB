@@ -4,6 +4,7 @@ import { setupCounter } from "./counter.js";
 const categoryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=a";
+const pasta = document.querySelector('.pasta');
 
 // fetch function to make a GET request to the API.
 
@@ -24,8 +25,8 @@ function displayCategoriesMeals(meals) {
     mealCard.innerHTML = `
           <div class="image-container">
             <div class="image-card">
-            <a href="http://127.0.0.1:5500/@latest/details.html"><img id="small" src="${meal.strMealThumb}" alt="Image 1"></a>
-              <div class="desc">${meal.strMeal}</div>
+             <a href=http://127.0.0.1:5500/@latest/details.html?id=${meal.idMeal}&category=${meal.strCategory}><img id="small" src="${meal.strMealThumb}" alt="Image 1"></a>
+              <div id='test' class="desc">${meal.strMeal}</div>
             </div>
           </div>
     `;
@@ -53,7 +54,7 @@ function displayDeliciousMeals(meals) {
     mealCard.innerHTML = `
         <div class="pasta">
           <img src="${meal.strMealThumb}"  id="img" alt="">
-          <span>${meal.strMeal}</span>
+          <span ${meal.strMeal}</span>
         </div>
     `;
     mealContainer.appendChild(mealCard);
@@ -61,3 +62,8 @@ function displayDeliciousMeals(meals) {
 }
 
 setupCounter(document.querySelector("#counter"));
+const testt = document.getElementById("test")
+
+testt.addEventListener("click", ()=>{
+  console.log("hello");
+})

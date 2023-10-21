@@ -270,6 +270,17 @@ button {
   margin-bottom: 2rem;
 }
 
+.ingedients {
+  display: flex;
+  gap: 1rem;
+}
+
+.ingredient-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 #foot {
   border: 8px solid #fd4f10;
 }

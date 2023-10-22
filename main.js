@@ -4,9 +4,8 @@ import { setupCounter } from "./counter.js";
 const categoryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=a";
-const pasta = document.querySelector('.pasta');
 
-// fetch function to make a GET request to the API.
+// fetch function to make a GET request to the API for Latest recipes .
 
 fetch(categoryUrl)
   .then((response) => {
@@ -33,6 +32,8 @@ function displayCategoriesMeals(meals) {
     mealContainer.appendChild(mealCard);
   });
 }
+
+// fetch function to make a GET request to the API for Popular categories.
 
 fetch(apiUrl)
   .then((Response) => {
@@ -67,3 +68,22 @@ const testt = document.getElementById("test")
 testt.addEventListener("click", ()=>{
   console.log("hello");
 })
+
+
+// return then footer
+
+function displayFooter(meals) {
+  const mealContainer = document.querySelector(".instru");
+  const mealCard = document.createElement("div");
+  mealCard.classList.add("intru");
+  meals.forEach((meal) => {
+    if (mealId == meal.idMeal) {
+      mealCard.innerHTML = `
+      <p class="circle">1</p>
+      <p> ${meal.strInstructions} </p>
+    `;
+    }
+
+    mealContainer.appendChild(mealCard);
+  });
+}

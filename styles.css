@@ -177,13 +177,14 @@ h2 {
 .intru {
   padding-top: 2rem;
   display: flex;
-  width: 60%;
+  width: 50%;
   gap: 1rem;
   align-items: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form {
+  width: 160%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -192,7 +193,7 @@ h2 {
   margin-top: 2rem;
   width: fit-content;
   background-color: #eee8e8;
-  padding: 10px 7px;
+  padding: 10px 40px;
   border-radius: 8px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -218,6 +219,7 @@ hr {
 }
 
 .nutri {
+  /* width: 50%; */
   display: flex;
   justify-content: space-between;
 }
@@ -225,11 +227,16 @@ hr {
 .rec {
   font-size: 24px;
   font-weight: bold;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .recipe {
   padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  align-items: center;
+  width: 50%;
 }
 
 .icon-text {
@@ -245,7 +252,8 @@ hr {
 
 .reci {
   padding-bottom: 2rem;
-  gap: 1rem;
+  gap: 0.4rem;
+  width: 250%;
   display: flex;
   align-items: center;
 }
@@ -253,6 +261,73 @@ hr {
 .footer {
   padding-top: 3rem;
   padding-left: 2rem;
+}
+
+#favo {
+  border: none;
+  margin-top: -0.5rem;
+}
+
+#favo:hover {
+  color: #fd4f10;
+}
+
+.sect6 {
+  background-color: #ffd7c9;
+  text-align: center;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  margin-left: -3rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-width: fit-content;
+}
+
+.big {
+  font-size: 550%;
+}
+
+.bold {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+  padding: 15px;
+  width: 30%;
+  margin: 0 auto;
+  border: none;
+}
+
+.join {
+  justify-content: center;
+  position: absolute;
+  padding: 13px 2px;
+  width: 60px;
+  background-color: #ff642f;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.write {
+  font-size: 14px;
+  padding-right: 180px;
+  padding-top: 19px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.underline {
+  text-decoration: underline red;
 }
 
 .foot {
@@ -267,7 +342,7 @@ hr {
 
 .videos-food {
   border-radius: 10px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 button {
@@ -292,10 +367,8 @@ button {
 }
 
 
-@media screen and (max-width: 320px) {
-  * {
-    margin: 0 auto;
-  }
+@media screen and (max-width: 768px) {
+
 
   #three {
     width: 2%;
@@ -307,7 +380,7 @@ button {
   }
 
   .all2 {
-    width: 100%;
+    width: 30%;
   }
   .home {
     display: none;
@@ -318,6 +391,7 @@ button {
   }
 
   .left {
+    justify-content: space-between;
     display: flex;
   }
 

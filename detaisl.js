@@ -5,6 +5,22 @@ const mealCategory = urlParam.get("category");
 const mealVideo = urlParam.get("video");
 const apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${mealCategory}`;
 const apiIng = "https://www.themealdb.com/api/json/v1/1/search.php?s";
+const favoriteBtn = document.getElementById("favo");
+
+//  get the meal to add favorite
+favoriteBtn.addEventListener("click", () => {
+  const favoris = JSON.parse(localStorage.getItem("favoris") || "[]");
+  if (!favoris.includes(mealId)) {
+    console.log(favoris);
+    favoris.push(mealId);
+    localStorage.setItem("favoris", JSON.stringify(favoris));
+    alert("Successfully Add !");
+  } else {
+    alert("Already in favoris!");
+  }
+  
+  // console.log( 'your plat favorite' ,favoris);
+});
 
 
 // display Fresh Recipes details page
@@ -14,13 +30,14 @@ fetch(apiUrl)
   })
   .then((data) => {
     // console.log(data);
-    displayDetailMeals(data.meals);
+    const dataslice = data.meals.slice(0,5)
+    console.log(dataslice);
+    displayDetailMeals(dataslice);
   });
 
 function displayDetailMeals(meals) {
   const mealContainer = document.querySelector(".recipe");
   meals.forEach((meal) => {
-    // console.log(meal);
     const mealCard = document.createElement("div");
     mealCard.classList.add("reci");
     mealCard.innerHTML = `
@@ -47,12 +64,12 @@ fetch(apiIng)
     return response.json();
   })
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     displayDetailsMeals(data.meals);
     displayVideo(data.meals);
   });
 
-function displayVideo(meals) {
+function displayVideo(meals) {meals
   const mealContainer = document.querySelector(".all-video");
   const mealCard = document.createElement("div");
   mealCard.classList.add("video");
@@ -61,7 +78,6 @@ function displayVideo(meals) {
       var videoURL = meal.strYoutube;
       var splited = videoURL.split("v=");
       var videoId = splited[1];
-      console.log(meal.strYoutube);
       mealCard.innerHTML = `
     <iframe width="100%" height="710px" class="videos-food"
       src="https://www.youtube.com/embed/${videoId}">
@@ -83,48 +99,6 @@ function displayDetailsMeals(meals) {
     // console.log(meal);
     mealCard.classList.add("ingredient");
     if (mealId == meal.idMeal) {
-      if (
-        meal.strIngredient1 != "" ||
-        meal.strIngredient1 != null ||
-        meal.strIngredient2 != "" ||
-        meal.strIngredient2 != null ||
-        meal.strIngredient3 != "" ||
-        meal.strIngredient3 != null ||
-        meal.strIngredient4 != "" ||
-        meal.strIngredient4 != null ||
-        meal.strIngredient5 != "" ||
-        meal.strIngredient5 != null ||
-        meal.strIngredient6 != "" ||
-        meal.strIngredient6 != null ||
-        meal.strIngredient7 != "" ||
-        meal.strIngredient7 != null ||
-        meal.strIngredient8 != "" ||
-        meal.strIngredient8 != null ||
-        meal.strIngredient9 != "" ||
-        meal.strIngredient9 != null ||
-        meal.strIngredient10 != "" ||
-        meal.strIngredient10 != null ||
-        meal.strIngredient11 != "" ||
-        meal.strIngredient11 != null ||
-        meal.strIngredient12 != "" ||
-        meal.strIngredient12 != null ||
-        meal.strIngredient13 != "" ||
-        meal.strIngredient13 != null ||
-        meal.strIngredient14 != "" ||
-        meal.strIngredient14 != null ||
-        meal.strIngredient15 != "" ||
-        meal.strIngredient15 != null ||
-        meal.strIngredient16 != "" ||
-        meal.strIngredient16 != null ||
-        meal.strIngredient17 != "" ||
-        meal.strIngredient17 != null ||
-        meal.strIngredient18 != "" ||
-        meal.strIngredient18 != null ||
-        meal.strIngredient19 != "" ||
-        meal.strIngredient19 != null ||
-        meal.strIngredient20 != "" ||
-        meal.strIngredient20 != null
-      ) {
         mealCard.innerHTML = `
         <div class="ingredient-container">
         <div class="ingedients">
@@ -232,11 +206,9 @@ function displayDetailsMeals(meals) {
        
         `;
         mealContainer.appendChild(mealCard);
-      }
     }
   });
 }
-
 
 // display Instructions details page
 
@@ -245,8 +217,8 @@ fetch(apiIng)
     return response.json();
   })
   .then((data) => {
-    console.log(data);
-    displayInstruction(data.meals)
+    // console.log(data);
+    displayInstruction(data.meals);
   });
 
 function displayInstruction(meals) {
@@ -264,6 +236,3 @@ function displayInstruction(meals) {
     mealContainer.appendChild(mealCard);
   });
 }
-
-
-

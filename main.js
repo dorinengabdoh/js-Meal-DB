@@ -5,6 +5,7 @@ const categoryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=a";
 
+
 // fetch function to make a GET request to the API for Latest recipes .
 
 fetch(categoryUrl)
@@ -24,7 +25,7 @@ function displayCategoriesMeals(meals) {
     mealCard.innerHTML = `
           <div class="image-container">
             <div class="image-card">
-             <a href=http://127.0.0.1:5500/@latest/details.html?id=${meal.idMeal}&category=${meal.strCategory}><img id="small" src="${meal.strMealThumb}" alt="Image 1"></a>
+             <a href=/details.html?id=${meal.idMeal}&category=${meal.strCategory}><img id="small" src="${meal.strMealThumb}" alt="Image 1"></a>
               <div id='test' class="desc">${meal.strMeal}</div>
             </div>
           </div>
@@ -62,28 +63,61 @@ function displayDeliciousMeals(meals) {
   });
 }
 
-setupCounter(document.querySelector("#counter"));
-const testt = document.getElementById("test")
+// Add favorite
 
-testt.addEventListener("click", ()=>{
-  console.log("hello");
-})
-
-
-// return then footer
-
-function displayFooter(meals) {
-  const mealContainer = document.querySelector(".instru");
-  const mealCard = document.createElement("div");
-  mealCard.classList.add("intru");
-  meals.forEach((meal) => {
-    if (mealId == meal.idMeal) {
-      mealCard.innerHTML = `
-      <p class="circle">1</p>
-      <p> ${meal.strInstructions} </p>
-    `;
-    }
-
-    mealContainer.appendChild(mealCard);
+fetch(categoryUrl)
+  .then((Response) => {
+    return Response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    displaySuperDelicious(data.meals);
+  })
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
   });
+
+function displaySuperDelicious(meals) {
+  const carousel = document.querySelector(".sect4-up");
+  const storedData = JSON.parse(localStorage.getItem("favoris"));
+  for (let i = 0; i < storedData.length; i++) {
+    console.log(storedData);
+    const newItem = document.createElement("div");
+    newItem.classList.add("d1");
+    meals.forEach((meal) => {
+  if (meal.idMeal === storedData[i]) {
+      newItem.innerHTML = `
+      <img src="${meal.strMealThumb}">
+      <div class="star-row">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <strong>
+        <p class="desc">${meal.strArea}</p>
+      </strong>
+      <div class="comment">
+        <img id="profile" height="200%" src="./images/comment.jpg" alt="">
+        <p>Tricia Albert</p>
+      </div>
+      <div class="favorite-and-date">
+        <div class="null">
+          <i class="fas fa-calendar"></i>
+          <p>yesterday</p>
+        </div>
+        <div class="null">
+          <i class="fas fa-star"></i>
+          <p>456</p>
+        </div>
+      </div>
+    `
+      carousel.appendChild(newItem);
+  }
+    });
+  }
 }
+
+
+
+setupCounter(document.querySelector("#counter"));

@@ -18,10 +18,9 @@ favoriteBtn.addEventListener("click", () => {
   } else {
     alert("Already in favoris!");
   }
-  
+
   // console.log( 'your plat favorite' ,favoris);
 });
-
 
 // display Fresh Recipes details page
 fetch(apiUrl)
@@ -30,7 +29,7 @@ fetch(apiUrl)
   })
   .then((data) => {
     // console.log(data);
-    const dataslice = data.meals.slice(0,5)
+    const dataslice = data.meals.slice(0, 5);
     console.log(dataslice);
     displayDetailMeals(dataslice);
   });
@@ -69,7 +68,8 @@ fetch(apiIng)
     displayVideo(data.meals);
   });
 
-function displayVideo(meals) {meals
+function displayVideo(meals) {
+  meals;
   const mealContainer = document.querySelector(".all-video");
   const mealCard = document.createElement("div");
   mealCard.classList.add("video");
@@ -99,7 +99,7 @@ function displayDetailsMeals(meals) {
     // console.log(meal);
     mealCard.classList.add("ingredient");
     if (mealId == meal.idMeal) {
-        mealCard.innerHTML = `
+      mealCard.innerHTML = `
         <div class="ingredient-container">
         <div class="ingedients">
         <strong> 1 -</strong>
@@ -205,7 +205,7 @@ function displayDetailsMeals(meals) {
        
        
         `;
-        mealContainer.appendChild(mealCard);
+      mealContainer.appendChild(mealCard);
     }
   });
 }

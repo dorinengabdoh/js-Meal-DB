@@ -40,9 +40,11 @@ fetch(apiUrl)
   .then((Response) => {
     return Response.json();
   })
+
   .then((data) => {
     console.log(data);
     displayDeliciousMeals(data.meals);
+    console.log(data.meals);
   })
   .catch((error) => {
     console.error("There was a problem with the fetch operation:", error);

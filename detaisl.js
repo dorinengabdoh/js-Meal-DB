@@ -18,8 +18,6 @@ favoriteBtn.addEventListener("click", () => {
   } else {
     alert("Already in favoris!");
   }
-
-  // console.log( 'your plat favorite' ,favoris);
 });
 
 // display Fresh Recipes details page

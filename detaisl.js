@@ -30,7 +30,7 @@ fetch(apiUrl)
     const dataslice = data.meals.slice(0, 5);
     console.log(dataslice);
     displayDetailMeals(dataslice);
-  });
+});
 
 function displayDetailMeals(meals) {
   const mealContainer = document.querySelector(".recipe");
@@ -54,7 +54,7 @@ function displayDetailMeals(meals) {
   });
 }
 
-// display the youtube video detail page
+// display the youtube video detail page${videoId}
 
 fetch(apiIng)
   .then((response) => {

@@ -1,6 +1,7 @@
 import "./style.css";
 import { setupCounter } from "./counter.js";
 
+
 const categoryUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=a";

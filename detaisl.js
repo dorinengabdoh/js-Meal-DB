@@ -1,6 +1,7 @@
 const data = window.location.search;
 const urlParam = new URLSearchParams(data);
 const mealId = urlParam.get("id");
+console.log(mealId);
 const mealCategory = urlParam.get("category");
 const mealVideo = urlParam.get("video");
 const apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${mealCategory}`;

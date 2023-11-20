@@ -282,12 +282,11 @@ hr {
   padding-top: 20px;
   padding-bottom: 30px;
   margin-top: 1rem;
-  width: fit-content;
+  width: 20%;
   border-radius: 10px;
-  margin-left: -3rem;
   padding-left: 8px;
   padding-right: 8px;
-  min-width: fit-content;
+
 }
 
 .big {
@@ -372,6 +371,16 @@ button {
 
   #three {
     width: 2%;
+  }
+
+  .sect6 {
+    width: fit-content;
+    margin-right: 5rem;
+  }
+
+  .container{
+    margin-left: 4rem;
+    width: 90%;
   }
 
   .all {

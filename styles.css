@@ -282,7 +282,7 @@ hr {
   padding-top: 20px;
   padding-bottom: 30px;
   margin-top: 1rem;
-  width: 20%;
+  width: fit-content;
   border-radius: 10px;
   padding-left: 8px;
   padding-right: 8px;
